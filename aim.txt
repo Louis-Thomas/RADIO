@@ -1,0 +1,67 @@
+# Music Player App Development Plan
+
+Since you want to focus on the backend and frontend while skipping the Python script part, here's a streamlined plan:
+
+## 1. Backend Development
+
+### API Endpoints
+- **GET /artists** - List all available artists
+- **GET /artist/{artist}/albums** - List albums for a specific artist
+- **GET /album/{album}/tracks** - List tracks for a specific album
+- **POST /queue** - Add a track/album to the queue
+- **GET /queue** - Get current queue
+- **GET /now-playing** - Get currently playing track info
+- **POST /control** - Play/pause/skip controls
+
+### Technology Choices
+- **Node.js/Express** - Simple to set up for this use case
+- **SQLite** - Lightweight database to store track metadata (artist, album, duration)
+- **Icecast2 integration** - Read directly from your Icecast server
+
+### Key Backend Tasks
+1. Set up metadata parser to extract duration from FLAC files
+2. Create API endpoints for music browsing
+3. Implement queue management system
+4. Create now-playing tracking system that updates your text file
+5. Add controls (play/pause/skip)
+
+## 2. Frontend Development
+
+### Basic UI Components
+- **Artist/Album Browser** - Tree view of your music collection
+- **Now Playing Display** - Current track with progress bar
+- **Queue View** - Upcoming tracks
+- **Controls** - Play/pause/skip buttons
+- **Add to Queue** - Buttons to queue individual tracks or whole albums
+
+### Technology Choices
+- **React** or **Vue.js** - For a responsive single-page app
+- **Tailwind CSS** - For quick styling
+- **Howler.js** or **Web Audio API** - For audio playback
+
+### Key Frontend Tasks
+1. Create music browser interface
+2. Implement audio player with controls
+3. Build queue management interface
+4. Connect to backend API
+5. Add auto-update for now-playing information
+
+## Development Sequence
+
+1. **Set up backend API** with basic endpoints
+2. **Create metadata importer** to populate your database
+3. **Build basic frontend** to test API connectivity
+4. **Implement audio playback** in frontend
+5. **Add queue functionality** to both backend and frontend
+6. **Create now-playing tracking** that updates your text file
+7. **Polish UI** and add any additional features
+
+## Alternative Simple Approach
+
+If you want something even simpler, consider:
+
+1. **Use a static site generator** to create browseable HTML pages of your music
+2. **Simple JavaScript player** that can play tracks directly from Icecast
+3. **PHP/Node script** that updates the now-playing text file
+
+Would you like me to elaborate on any specific part of this plan?
